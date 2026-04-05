@@ -6,9 +6,7 @@ This project is currently in progress, combining mechanical design, embedded sys
 
 --------------------------------------------------------
 
-![WhatsApp Image 2026-03-20 at 10 09 35 PM](https://github.com/user-attachments/assets/5f46eb23-cd08-4554-8f46-b8c1384d3fdb)
-
-![WhatsApp Image 2026-03-20 at 10 09 35 PM 2](https://github.com/user-attachments/assets/00cd435f-0b4a-499f-ad7b-0367cc150c37)
 
 
 
+<img width="643" height="807" alt="Screenshot 2026-04-05 231142" src="https://github.com/user-attachments/assets/80b0adf8-9c0e-425a-89d8-1c467d91818f" />

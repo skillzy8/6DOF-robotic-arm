@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="urdf_expoert_second_design">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm">
+        <link name="shoulder_arm_1"/>
+        <link name="arm_holder_right_after_shoulder_1"/>
+        <link name="elbow_arm_1"/>
+        <link name="gripper_holder_1"/>
+        <joint name="bottom_holder_rotation"/>
+        <joint name="shoulder_arm_rotation"/>
+        <joint name="arm_holder_right_after_shoulder_rotation"/>
+        <joint name="elbow_arm_rotation"/>
+        <joint name="gripper_holder_rotation"/>
+        <joint name="end_factor_rotation"/>
+        <chain base_link="base_link" tip_link="robotic_arm_gripper_1"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="test1" group="arm">
+        <joint name="arm_holder_right_after_shoulder_rotation" value="-0.6766"/>
+        <joint name="elbow_arm_rotation" value="-1.1276"/>
+        <joint name="gripper_holder_rotation" value="1.5093"/>
+        <joint name="shoulder_arm_rotation" value="0.2602"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="end_effector" parent_link="robotic_arm_gripper_1" group="arm" parent_group="arm"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="arm_holder_right_after_shoulder_1" link2="elbow_arm_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_holder_right_after_shoulder_1" link2="robotic_arm_gripper_1" reason="Never"/>
+    <disable_collisions link1="arm_holder_right_after_shoulder_1" link2="shoulder_arm_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="bottom_holder_1" reason="Adjacent"/>
+    <disable_collisions link1="bottom_holder_1" link2="shoulder_arm_1" reason="Adjacent"/>
+    <disable_collisions link1="elbow_arm_1" link2="gripper_holder_1" reason="Adjacent"/>
+    <disable_collisions link1="elbow_arm_1" link2="robotic_arm_gripper_1" reason="Never"/>
+    <disable_collisions link1="gripper_holder_1" link2="robotic_arm_gripper_1" reason="Adjacent"/>
+    <disable_collisions link1="gripper_holder_1" link2="shoulder_arm_1" reason="Never"/>
+    <disable_collisions link1="robotic_arm_gripper_1" link2="shoulder_arm_1" reason="Never"/>
+</robot>

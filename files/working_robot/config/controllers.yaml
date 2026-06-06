@@ -1,0 +1,26 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - bottom_holder_rotation
+      - shoulder_arm_rotation
+      - arm_holder_right_after_shoulder_rotation
+      - elbow_arm_rotation
+      - gripper_holder_rotation
+      - end_factor_rotation
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity

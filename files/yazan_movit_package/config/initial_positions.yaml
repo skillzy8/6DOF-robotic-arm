@@ -1,0 +1,9 @@
+# Default initial positions for urdf_expoert_second_design's ros2_control fake system
+
+initial_positions:
+  arm_holder_right_after_shoulder_rotation: 0
+  bottom_holder_rotation: 0
+  elbow_arm_rotation: 0
+  end_factor_rotation: 0
+  gripper_holder_rotation: 0
+  shoulder_arm_rotation: 0

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="urdf_expoert_second_design_ros2_control" params="name initial_positions_file">
+        <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/>
+
+        <ros2_control name="FakeSystem" type="system">
+            <hardware>
+                <!-- By default, set up controllers for simulation. This won't work on real hardware -->
+                <plugin>mock_components/GenericSystem</plugin>
+            </hardware>
+            <joint name="shoulder_arm_rotation">
+                <command_interface name="position"/>
+                <state_interface name="position">
+                  <param name="initial_value">${initial_positions['shoulder_arm_rotation']}</param>
+                </state_interface>
+            </joint>
+            <joint name="arm_holder_right_after_shoulder_rotation">
+                <command_interface name="position"/>
+                <state_interface name="position">
+                  <param name="initial_value">${initial_positions['arm_holder_right_after_shoulder_rotation']}</param>
+                </state_interface>
+            </joint>
+            <joint name="elbow_arm_rotation">
+                <command_interface name="position"/>
+                <state_interface name="position">
+                  <param name="initial_value">${initial_positions['elbow_arm_rotation']}</param>
+                </state_interface>
+            </joint>
+            <joint name="gripper_holder_rotation">
+                <command_interface name="position"/>
+                <state_interface name="position">
+                  <param name="initial_value">${initial_positions['gripper_holder_rotation']}</param>
+                </state_interface>
+            </joint>
+            <joint name="end_factor_rotation">
+                <command_interface name="position"/>
+                <state_interface name="position">
+                  <param name="initial_value">${initial_positions['end_factor_rotation']}</param>
+                </state_interface>
+            </joint>
+            <joint name="bottom_holder_rotation">
+                <command_interface name="position"/>
+                <state_interface name="position">
+                  <param name="initial_value">${initial_positions['bottom_holder_rotation']}</param>
+                </state_interface>
+            </joint>
+
+        </ros2_control>
+    </xacro:macro>
+</robot>

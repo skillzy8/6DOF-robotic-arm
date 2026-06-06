@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<robot name="urdf_expoert_second_design" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find mypackage2)/urdf/materials.xacro" />
+<xacro:include filename="$(find mypackage2)/urdf/urdf_expoert_second_design.trans" />
+<xacro:include filename="$(find mypackage2)/urdf/urdf_expoert_second_design.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-1.1009238833671162e-05 0.16094415069111942 -0.1654471209389099" rpy="0 0 0"/>
+    <mass value="1.112848875133212"/>
+    <inertia ixx="0.001522" iyy="0.001532" izz="0.002232" ixy="-1e-06" iyz="3e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bottom_holder_1">
+  <inertial>
+    <origin xyz="0.000632156036678196 -2.4478357749102564e-07 0.010690196353127165" rpy="0 0 0"/>
+    <mass value="0.4117289758525692"/>
+    <inertia ixx="0.000453" iyy="0.00031" izz="0.000582" ixy="0.0" iyz="0.0" ixz="-5e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.167935 0.132865" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/bottom_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.167935 0.132865" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/bottom_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_arm_1">
+  <inertial>
+    <origin xyz="0.013333633194672827 -2.4478296409280453e-07 0.05560761862628329" rpy="0 0 0"/>
+    <mass value="0.5526510438521538"/>
+    <inertia ixx="0.000979" iyy="0.000893" izz="0.00014" ixy="0.0" iyz="0.0" ixz="-1.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.005 -0.167935 0.084465" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/shoulder_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.005 -0.167935 0.084465" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/shoulder_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_holder_right_after_shoulder_1">
+  <inertial>
+    <origin xyz="-0.016575109155223963 -2.2569197652422268e-07 0.050146773600070936" rpy="0 0 0"/>
+    <mass value="0.25335323203607535"/>
+    <inertia ixx="0.000486" iyy="0.000441" izz="6.2e-05" ixy="0.0" iyz="0.0" ixz="2.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0072 -0.167935 -0.015535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/arm_holder_right_after_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0072 -0.167935 -0.015535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/arm_holder_right_after_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_arm_1">
+  <inertial>
+    <origin xyz="0.012610794300089932 -2.447837582630896e-07 0.05575758634221434" rpy="0 0 0"/>
+    <mass value="0.48863224602939626"/>
+    <inertia ixx="0.00085" iyy="0.000769" izz="0.000118" ixy="-0.0" iyz="-0.0" ixz="-1.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0068 -0.167935 -0.115535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/elbow_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0068 -0.167935 -0.115535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/elbow_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_holder_1">
+  <inertial>
+    <origin xyz="-0.015708268904436173 -2.447836850993923e-07 0.0520955229905882" rpy="0 0 0"/>
+    <mass value="0.31483005565452693"/>
+    <inertia ixx="0.000579" iyy="0.000524" izz="7.3e-05" ixy="-0.0" iyz="0.0" ixz="2.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0038 -0.167935 -0.215535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/gripper_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0038 -0.167935 -0.215535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/gripper_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="robotic_arm_gripper_1">
+  <inertial>
+    <origin xyz="-0.006695702869069793 -1.977584226653395e-07 0.0004126600011846171" rpy="0 0 0"/>
+    <mass value="0.12123840028389098"/>
+    <inertia ixx="3.7e-05" iyy="2.7e-05" izz="1.3e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0269 -0.167935 -0.315535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/robotic_arm_gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0269 -0.167935 -0.315535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mypackage2/meshes/robotic_arm_gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="bottom_holder_rotation" type="continuous">
+  <origin xyz="0.0 0.167935 -0.132865" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bottom_holder_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="shoulder_arm_rotation" type="continuous">
+  <origin xyz="0.005 0.0 0.0484" rpy="0 0 0"/>
+  <parent link="bottom_holder_1"/>
+  <child link="shoulder_arm_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="arm_holder_right_after_shoulder_rotation" type="continuous">
+  <origin xyz="0.0022 0.0 0.1" rpy="0 0 0"/>
+  <parent link="shoulder_arm_1"/>
+  <child link="arm_holder_right_after_shoulder_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="elbow_arm_rotation" type="continuous">
+  <origin xyz="-0.014 0.0 0.1" rpy="0 0 0"/>
+  <parent link="arm_holder_right_after_shoulder_1"/>
+  <child link="elbow_arm_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="gripper_holder_rotation" type="continuous">
+  <origin xyz="0.003 0.0 0.1" rpy="0 0 0"/>
+  <parent link="elbow_arm_1"/>
+  <child link="gripper_holder_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="end_factor_rotation" type="continuous">
+  <origin xyz="-0.0231 0.0 0.1" rpy="0 0 0"/>
+  <parent link="gripper_holder_1"/>
+  <child link="robotic_arm_gripper_1"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+</joint>
+
+</robot>

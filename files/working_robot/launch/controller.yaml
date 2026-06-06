@@ -1,0 +1,31 @@
+urdf_expoert_second-design_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  bottom_holder_rotation_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: bottom_holder_rotation
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  shoulder_arm_rotation_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: shoulder_arm_rotation
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  arm_holder_right_after_shoulder_rotation_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_holder_right_after_shoulder_rotation
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  elbow_arm_rotation_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: elbow_arm_rotation
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  gripper_holder_rotation_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: gripper_holder_rotation
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  end_factor_rotation_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: end_factor_rotation
+    pid: {p: 100.0, i: 0.01, d: 10.0}
